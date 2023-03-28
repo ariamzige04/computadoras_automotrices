@@ -1,0 +1,105 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.compra-segura {
+
+    .seguro {
+        position: relative;
+        height: 20rem;
+        padding: 0;
+        @include m.tablet {
+            height: auto;
+        }
+    }
+    ul {
+        
+
+        li {
+            list-style: none;
+            position: absolute;
+
+            &:nth-child(1) {
+                
+                top: 0;
+                left: 25%;
+            }
+            &:nth-child(2) {
+                font-weight: v.$bold;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                p {
+                    font-size: 4rem;
+
+                    @include m.tablet {
+                        font-size: 5rem;
+                    }
+                }
+                
+            }
+
+            &:nth-child(3) {
+                bottom: 0;
+                right: 25%;
+            }
+
+            @include m.tablet {
+                &:nth-child(1) {
+                
+                    left: 50%;
+                }
+
+                &:nth-child(2) {
+                
+                    left: 75%;
+                }
+
+                &:nth-child(3) {
+                
+                    right: 0;
+                }
+            }
+
+            p {
+                font-size: 2.1rem;
+            }
+            @include m.tablet {
+                
+                p {
+                    font-size: 2.5rem;
+                }
+                
+            }
+        }
+    }
+
+    img {
+        
+        width: 25%;
+        @include m.tablet {
+            height: 75%;
+            width: auto;
+            
+        }
+    }
+
+    .imagen-contenedor-seguro {
+        @include m.tablet {
+            justify-content: flex-start;
+            
+        }
+    }
+
+}
+
+.parrafo-seccion-seguro {
+    width: 100%;
+    margin: 3rem auto 0;
+    @include m.tablet {
+        width: 50%;
+    }
+
+    
+}

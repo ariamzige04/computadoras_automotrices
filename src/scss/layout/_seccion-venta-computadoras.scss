@@ -1,0 +1,72 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.seccion-venta-computadoras {
+
+
+    p {
+        font-weight: v.$bold;
+    }
+    .btn-computadoras-seccion {
+
+        a {
+            @include m.boton(v.$blanco, block);
+            color: v.$negro;
+            width: 100%;
+            height: 6rem;
+            padding: 0;
+            margin: 0;
+            @include m.flex-centrar;
+            &::before {
+                display: none;
+            }
+
+            img {
+                width: 75%;
+                
+            }
+        }
+    }
+    
+}
+
+.btn-seleccionado {
+    background-color: v.$gris-oscuro!important;
+    color: v.$blanco!important;
+    
+    img {
+        filter: brightness(0) invert(1);
+    }
+
+}
+
+.buscar-input {
+
+    position: relative;
+    margin-top: 2rem;
+    input {
+        position: absolute;
+        border: 1px solid v.$negro;
+        transition: v.$tra;
+        padding: 1rem;
+        padding-left: 4rem;
+        outline: none;
+        width: 100%;
+        @include m.tablet {
+            width: 50%;
+        }
+        &::placeholder {
+            color: v.$gris-oscuro;
+        }
+
+    }
+
+    img {
+        height: 2rem;
+        width: auto;
+        left: 1rem;
+        top: 1rem;
+        position: absolute;
+    }
+}

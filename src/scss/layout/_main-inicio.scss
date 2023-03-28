@@ -1,0 +1,25 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.contenido-principal-inicio {
+    .divisiones {
+
+        margin-top: 4rem;
+
+        @include m.telefono {
+            margin: 0;
+        }
+        
+        img {
+            width: 25%;
+            margin: 0 auto;
+            transition: v.$tra;
+            transform: translateY(0);
+        }
+
+        &:hover img {
+            transform: translateY(-1rem);
+        }
+    }
+}

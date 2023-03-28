@@ -1,0 +1,45 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use "sass:math";
+
+
+.boton-negro-block {
+    @include m.boton(v.$gris-oscuro, block);
+    
+ }
+
+ .boton-blanco-block {
+    @include m.boton(v.$blanco, block);
+    color: v.$negro;
+    
+ }
+.boton-negro {
+    @include m.boton(v.$gris-oscuro, inline-block);
+}
+
+.submit-negro {
+    @include m.boton(v.$gris-oscuro, inline-block);
+    padding: 1rem 3rem;
+    &::before {
+        display: none;
+    }
+}
+
+.boton-blanco {
+    @include m.boton(v.$blanco, inline-block);
+    color: v.$negro;
+
+}
+
+.boton-gris-block {
+    @include m.boton(v.$gris-claro, block);
+    color: v.$negro;
+
+}
+
+.boton-gris {
+    @include m.boton(v.$gris-claro, inline-block);
+    color: v.$negro;
+    padding: 1rem 3rem;
+
+}

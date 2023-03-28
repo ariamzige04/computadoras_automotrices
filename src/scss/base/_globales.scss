@@ -1,0 +1,104 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use "sass:math";
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    color: v.$negro;
+}
+
+
+::selection {
+    background-color: v.$gris-oscuro;
+    color: v.$blanco;
+}
+p {
+    color: v.$negro;
+    font-size: 1.6rem;
+}
+.contenedor {
+    width: 93%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    font-size: v.$t-2;
+    color: v.$negro;
+    font-weight: v.$semi-bold;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    &::selection {
+        background-color: transparent;
+
+    }
+}
+
+h1, h2, h3 {
+    font-family: v.$fuente_principal;
+    margin: math.div(v.$separacion, 2) 0;
+    font-weight: v.$bold;
+    text-align: center;
+    color: v.$negro;
+    letter-spacing: -2px;
+}
+
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 2.2rem;
+}
+h3 {
+    font-size: 2.1rem;
+}
+h4 {
+    font-size: 2rem;
+}
+@include m.tablet {
+    h1 {
+        font-size: 5rem;
+    }
+    h2 {
+        font-size: 2.7rem;
+    }
+    h3 {
+        font-size: 2.5rem;
+    }
+    
+}
+
+
+
+// ::-webkit-scrollbar {
+//     width: 1.5rem;
+//     background-color: v.$gris-claro;
+
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background-color: lighten(v.$gris, 10);
+//     border-radius: 1rem;
+//     box-shadow: 0 0 6px 2px v.$gris-claro inset;
+// }
+
+// ::-webkit-scrollbar-button {
+//     display: block;
+// }
+
+

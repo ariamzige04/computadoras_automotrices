@@ -1,0 +1,26 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.marcas-computadoras {
+    background-color: v.$gris-claro;
+    padding: 4rem 0;
+    
+    .imagen-marca {
+        transition: v.$tra;
+        opacity: 1;
+        height: 5rem;
+        &:hover {
+            opacity: .8;
+        }
+        img {
+            width: 75%;
+            height: auto;
+            
+           
+
+            
+        }
+    }
+    
+}

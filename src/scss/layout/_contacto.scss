@@ -1,0 +1,57 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.red-social {
+    background-color: v.$gris-claro;
+    position: relative;
+    height: 25rem;
+    overflow: hidden;
+    @include m.solo-telefono {
+        &:not(:last-of-type) {
+            margin-bottom: 2rem;
+        }
+    }
+    img {
+
+        transition: .35s ease-out;
+        position: static;
+        height: 100%;
+        padding: 7rem;
+    }
+    &:hover img {
+        padding: 0;
+        height: 7rem;
+        position: absolute;
+        top: 2rem;
+        width: 100%;
+        
+    }
+    
+
+    .contenido-red {
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+        right: 2rem;
+        transform: translateY(calc(100% + 2rem));
+        transition: .35s ease-out;
+        
+        a {
+            font-weight: v.$regular;
+        }
+        .titulo-red {
+            font-size: 2rem;
+            font-weight: v.$semi-bold;
+
+        }
+
+        p {
+
+        }
+    }
+
+    &:hover .contenido-red {
+        transform: none;
+    }
+}

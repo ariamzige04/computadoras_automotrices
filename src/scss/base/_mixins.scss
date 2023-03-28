@@ -1,0 +1,75 @@
+/** Media Queries **/
+
+@use 'variables' as v;
+@use "sass:math";
+
+@mixin telefono {
+    @media (min-width: v.$telefono) {
+        @content;
+    }
+}
+
+@mixin solo-telefono {
+    @media (max-width: 767px) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+  
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+@mixin grid($columnas, $espaciado ) {
+    display: grid;
+    column-gap: $espaciado;
+    row-gap: $espaciado;
+    grid-template-columns: repeat($columnas, 1fr);
+}
+
+@mixin boton($bgColor, $display ) {
+    background-color: $bgColor;
+    color: v.$blanco;
+    font-weight: v.$semi-bold;
+    text-decoration: none;
+    padding: 1rem 4.5rem 1rem 3rem;
+    text-align: center;
+    margin-top: math.div(v.$separacion, 2) * 0.5;
+    display: $display;
+    border: none;
+    transition: v.$tra;
+    position: relative;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &::before {
+        background-image: url(/build/img/flecha-derecha.svg);
+        background-repeat: no-repeat;
+        content: "";
+        height: 2rem;
+        width: 2rem;
+        background-position: center;
+        background-size: 100%;
+        position: absolute;
+        top: 50%;
+        right: 3rem;
+        transform: translate(50%, -50%);
+        margin: 0;
+        
+    }
+    &:hover {
+        background-color: darken($bgColor, 10);
+        cursor: pointer;
+    }
+}
+
+@mixin flex-centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

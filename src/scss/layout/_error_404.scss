@@ -1,0 +1,31 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.error_404 {
+
+   
+    .e-404, span {
+        font-size: 10rem;
+        font-weight: v.$bold;
+        margin: 0;
+    }
+    span {
+        font-size: 5rem;
+        color: v.$negro-trans;
+
+    }
+    
+    img {
+        filter: grayscale(1);
+        @include m.tablet {
+            width: 75%;
+            
+        }
+    }
+}
+
+.footer-abajo {
+    position: absolute;
+    bottom: -10rem;
+}

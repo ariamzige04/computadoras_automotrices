@@ -1,0 +1,75 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+.contenedor-formulario {
+    width: 93%;
+    max-width: 70rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.redes-sociales {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    transform: translateX(-2rem);
+    a {
+        transform: translateY(0);
+        transition: v.$tra;
+        padding: 2rem;
+        
+        &:hover {
+            transform: translateY(-1rem);
+
+        }
+    }
+    img {
+        height: 3rem;
+
+        
+    }
+}
+
+.formulario {
+    fieldset {
+        padding: 0;
+        border: none;
+    }
+
+    label {
+        font-size: 2rem;
+        color: v.$negro;
+        margin-bottom: 1rem;
+    }
+
+    input, textarea {
+        border: 1px solid v.$negro;
+        transition: v.$tra;
+        padding: 1rem;
+        outline: none;
+        width: 100%;
+        &::placeholder {
+            color: v.$gris-oscuro;
+        }
+
+        
+
+        &[type="submit"] {
+            border: none;
+            padding: 1rem 3rem;
+            width: auto;
+
+        }
+
+        
+    }
+
+    textarea {
+        height: 20rem;
+    }
+
+    .form-input {
+        display: grid;
+        margin-bottom: 2rem;
+
+    }
+}

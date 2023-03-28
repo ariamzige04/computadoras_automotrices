@@ -1,0 +1,31 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.envios-mexico {
+    background-color: v.$gris-claro;
+    height: 50vh;
+    position: relative;
+   
+    &::before {
+        background-image: url(/build/img/mapa_mexico.svg);
+        background-position: 50%;
+        background-repeat: no-repeat;
+        content: "";
+        position: absolute;
+        min-width: 95%;
+        top: 1rem;
+        bottom: 1rem;
+        background-size: contain;
+        transition: v.$tra;
+        opacity: 1;
+    }
+    &:hover:before {
+        opacity: .5;
+    }
+    .contenido-envios {
+        flex-direction: column;
+        position: relative;
+        z-index: 1;
+    }
+}

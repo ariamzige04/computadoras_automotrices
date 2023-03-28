@@ -1,0 +1,126 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use "sass:math";
+
+.seccion {
+    margin-top: v.$separacion * 2!important;
+}
+
+.seccion-uno {
+    margin-top: 17rem;
+}
+.contenido-centrado {
+    max-width: 80rem;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.alinear-derecha {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.w-100 {
+    width: 100%;
+}
+.flex-centrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.displayNone {
+    display: none;
+}
+
+.dos-columnas {
+    @include m.grid(2, 2rem);
+}
+
+.dos-columnas-responsive {
+    @include m.tablet {
+        @include m.grid(2, 2rem);
+    
+    }
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.margen-derecha {
+    &:not(:last-of-type) {
+        margin-right: 2rem;
+
+    }
+}
+
+.btn-flecha-negra {
+    &::before {
+        filter: invert(1);
+    }
+}
+
+.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+.grid-auto-minmax-6 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.grid-tres-columnas-responsive {
+    @include m.telefono {
+        @include m.grid(2, 2rem);
+    }
+    @include m.tablet {
+        @include m.grid(3, 2rem);
+        
+    }
+}
+
+.imagen-invertir-color {
+    img {
+        filter: brightness(0) invert(1);
+
+        
+    }
+
+}
+
+.cuatro-columnas-responsive {
+    @include m.telefono {
+        @include m.grid(2, 2rem);
+    }
+    @include m.tablet {
+        @include m.grid(3, 2rem);
+        
+    }
+    @include m.desktop {
+        @include m.grid(4, 2rem);
+        
+    }
+}
+
+.quitar-before {
+    padding: 1rem 3rem;
+    &::before {
+        display: none;
+    }
+}
+
+.margin-top {
+    margin-top: 2rem;
+}
+
+.column {
+    flex-direction: column;
+}

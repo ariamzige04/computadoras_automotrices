@@ -1,0 +1,67 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.contenedor-compu {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 120rem;
+    margin-top: v.$separacion * 2 + 8rem;
+
+    @include m.tablet {
+        width: 75%;
+    }
+
+    @include m.desktop {
+        width: 50%;
+    }
+    h1 {
+        font-weight: v.$regular;
+        font-size: 3.5rem;
+        
+        span {
+            font-weight: v.$semi-bold;
+
+        }
+    }
+
+    span {
+        font-weight: v.$semi-bold;
+
+    }
+
+    .carrito-precio {
+        p {
+            font-size: 3.5rem;
+            font-weight: v.$semi-bold;
+
+            span {
+                text-transform: uppercase;
+                font-weight: v.$regular;
+                font-size: 1rem;
+            }
+
+        }
+    }
+
+    .boton-whatsapp {
+        @include m.boton(v.$gris-oscuro, flex);
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+        &::before {
+            display: none;
+        }
+        img {
+            height: 2rem;
+            width: auto;
+            padding-right: 2rem;
+        }
+        @include m.tablet {
+        width: fit-content;
+            
+        }
+        
+    }
+}

@@ -1,0 +1,62 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+
+.anuncios-computadoras {
+    .ansCompus {
+        background-color: v.$gris-claro;
+        transition: v.$tra!important;
+        overflow: hidden;
+        &:hover {
+            box-shadow: 0 2px 10px darken(v.$gris-claro, 20);
+        }
+        @include m.solo-telefono {
+            &:not(:last-of-type) {
+                margin-bottom: 2rem;
+            }
+        }
+        p {
+            margin: 2rem 0;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+        
+        .contenedor-anuncio {
+            width: 90%;
+            margin: 0 auto;
+            height: 90%;
+            padding: 5% 0;
+        }
+        .img-anuncio {
+            transition: v.$tra-menu;
+            img {
+                object-fit: cover;
+                pointer-events: all;
+            }
+        }
+
+        span {
+            font-weight: v.$semi-bold;
+        }
+
+        
+
+    }
+
+    .carrito-precio {
+        p {
+            font-size: 3.5rem;
+            font-weight: v.$semi-bold;
+
+            span {
+                text-transform: uppercase;
+                font-weight: v.$regular;
+                font-size: 1rem;
+            }
+
+        }
+    }
+}
+

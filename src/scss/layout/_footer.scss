@@ -1,0 +1,10 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.footer {
+    height: 8rem;
+    background-color: v.$gris-claro;
+    width: 100%;
+    
+}

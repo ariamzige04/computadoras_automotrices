@@ -1,0 +1,87 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+@use "sass:math";
+
+.seccion-header {
+    height: calc(100vh);
+    .tres-titulos {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+        p {
+            font-size: 2rem;
+            color: v.$gris-oscuro;
+            font-weight: v.$semi-bold;
+            margin: 1rem;
+            
+        }
+    }
+
+    .dos-columnas-btn {
+        @include m.telefono {
+            @include m.grid(2, 2rem);
+
+        }
+    }
+
+    .imagen-header {
+        img {
+            filter: grayscale(1);
+            @include m.solo-telefono {
+                // position: absolute;
+                // top: 33%;
+                // left: 50%;
+                // opacity: 0.5;
+                // z-index: -1;
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+.img-principal-tel {
+
+    @media (max-width: 615px) {
+        
+    
+        position: absolute;
+        top: 50%;
+        z-index: -2;
+        transform: translateY(-50%);
+        /* height: 20rem; */
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+.img-compu-telefono {
+
+
+    @media (max-width: 615px) {
+        
+        height: 20rem;
+        opacity: .3;
+        position: relative;
+        width: 100%;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        filter: grayscale(1);
+        &::before {
+            background-image: url(/build/img/computadora_1_sombra.png);
+            /* background-position: 50% 50%; */
+            background-repeat: no-repeat;
+            background-size: contain;
+            content: "";
+            height: 100%;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            position: absolute;
+            
+        }
+    
+    }
+}
